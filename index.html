@@ -209,7 +209,7 @@
             font-size: 0.95rem;
         }
 
-        /* Values Section (Horizontal Flex) */
+        /* Values Section */
         .values-flex {
             display: flex;
             flex-wrap: wrap;
@@ -343,7 +343,6 @@
     <header>
         <div class="header-container">
             <div class="brand-logo">
-                <!-- علم المملكة العربية السعودية والشعار الكشفي -->
                 <i class="fa-solid font-awesome fa-flag flag-icon" title="علم المملكة العربية السعودية"></i>
                 <div class="brand-title">
                     <h1>كشافة ثانوية الأمير عبد المجيد بن عبد العزيز</h1>
@@ -489,32 +488,34 @@
         </div>
     </section>
 
-    <!-- Join Us Section -->
+    <!-- Join Us Section (مربوط بالبريد الإلكتروني) -->
     <section class="container" id="join">
         <div class="join-section">
             <div class="section-title" style="margin-bottom: 1.5rem;">
                 <h3>انضم إلينا اليوم</h3>
                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">كن جزءاً من رحلة التغيير في ثانوية الأمير عبد المجيد</p>
             </div>
-            <form id="scoutForm">
+            
+            <!-- تم توجيه النموذج إلى البريد المخصص -->
+            <form action="https://formspree.io/f/riyadagha2@gmail.com" method="POST">
                 <div class="form-group">
                     <label for="studentName">اسم الطالب الثلاثي:</label>
-                    <input type="text" id="studentName" placeholder="أدخل اسمك الكامل" required>
+                    <input type="text" id="studentName" name="اسم_الطالب" placeholder="أدخل اسمك الكامل" required>
                 </div>
                 <div class="form-group">
                     <label for="gradeLevel">الصف الدراسي:</label>
-                    <select id="gradeLevel" required>
+                    <select id="gradeLevel" name="الصف_الدراسي" required>
                         <option value="">اختر الصف...</option>
-                        <option value="first">الأول ثانوي</option>
-                        <option value="second">الثاني ثانوي</option>
-                        <option value="third">الثالث ثانوي</option>
+                        <option value="الأول ثانوي">الأول ثانوي</option>
+                        <option value="الثاني ثانوي">الثاني ثانوي</option>
+                        <option value="الثالث ثانوي">الثالث ثانوي</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="phone">رقم التواصل (الواتساب):</label>
-                    <input type="tel" id="phone" placeholder="05xxxxxxxx" required>
+                    <input type="tel" id="phone" name="رقم_التواصل" placeholder="05xxxxxxxx" required>
                 </div>
-                <button type="submit" class="btn-submit">تأكيد طلب الانضمام</button>
+                <button type="submit" class="btn-submit">إرسال طلب الانضمام</button>
             </form>
         </div>
     </section>
@@ -525,14 +526,5 @@
         <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">إعداد وتطوير الكشافة للبنين - المملكة العربية السعودية</p>
     </footer>
 
-    <!-- Form Script -->
-    <script>
-        document.getElementById('scoutForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('studentName').value;
-            alert('شكراً لك يا ' + name + '! تم استلام طلب انضمامك للفرقة الكشفية بثانوية الأمير عبد المجيد بن عبد العزيز بنجاح. سيتواصل معك قائد الفرقة قريباً.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
