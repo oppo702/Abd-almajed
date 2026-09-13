@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كشافة ثانوية الأمير عبد المجيد بن عبد العزيز | بناء القادة والمواطنين</title>
-    <!-- Google Fonts & FontAwesome icons -->
+    <title>كشافة ثانوية الأمير عبد المجيد بن عبد العزيز - بناء القادة والمواطنين</title>
+    <!-- خط تجوال العربي -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-green: #006C35;
-            --gold-accent: #D4AF37;
-            --dark-green: #004D25;
-            --light-bg: #F8F9FA;
-            --text-dark: #2B2B2B;
-            --text-muted: #6C757D;
-            --white: #FFFFFF;
+            --primary-color: #1b5e20; /* أخضر كشفي ملكي */
+            --secondary-color: #2e7d32;
+            --accent-color: #fbc02d; /* ذهبي/أصفر كشفي */
+            --dark-color: #1a252f;
+            --light-bg: #f4f6f8;
+            --white: #ffffff;
         }
 
         * {
@@ -28,47 +28,52 @@
 
         body {
             background-color: var(--light-bg);
-            color: var(--text-dark);
+            color: #333;
             line-height: 1.7;
         }
 
+        /* الهيدر وشريط الترويسة */
         header {
-            background-color: var(--primary-green);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        .brand-logo {
+        .branding {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        .flag-icon {
-            font-size: 2rem;
-            color: var(--white);
+        .flag-img, .scout-logo {
+            height: 55px;
+            width: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .brand-title h1 {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .title-area h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
-        .brand-title p {
-            font-size: 0.85rem;
-            opacity: 0.9;
+        .title-area p {
+            font-size: 0.9rem;
+            color: var(--accent-color);
         }
 
         nav ul {
@@ -81,95 +86,79 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--gold-accent);
+            color: var(--accent-color);
         }
 
+        /* قسم البطل / Banner */
         .hero {
-            background: linear-gradient(rgba(0, 77, 37, 0.88), rgba(0, 108, 53, 0.85)), 
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(26, 37, 47, 0.85)), 
                         url('https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?auto=format&fit=crop&w=1350&q=80') center/cover;
             color: var(--white);
-            padding: 5rem 2rem;
             text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .scout-emblem-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-            font-size: 3rem;
-            color: var(--gold-accent);
+            padding: 80px 20px;
         }
 
         .hero h2 {
             font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 25px;
         }
 
-        .btn-cta {
+        .btn {
             display: inline-block;
-            background-color: var(--gold-accent);
-            color: var(--dark-green);
-            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
             border-radius: 30px;
-            font-weight: 700;
             text-decoration: none;
+            font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-cta:hover {
+        .btn:hover {
+            background-color: #f9a825;
             transform: translateY(-2px);
-            background-color: #E5BE3E;
         }
 
+        /* الحاويات العامة */
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h3 {
-            color: var(--primary-green);
             font-size: 2rem;
-            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
             position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
         }
 
-        .section-title h3::after {
+        .section-title::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 25%;
-            width: 50%;
-            height: 3px;
-            background-color: var(--gold-accent);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
         }
 
-        .grid-cards {
+        /* شبكة البطاقات */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
@@ -177,340 +166,329 @@
 
         .card {
             background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
+            padding: 25px;
+            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-green);
             transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary-color);
         }
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        .card-icon {
-            font-size: 2.2rem;
-            color: var(--primary-green);
-            margin-bottom: 1rem;
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
-        .card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark-green);
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
         }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        /* قسم التعريف */
+        .about-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
         }
 
-        .values-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 1rem;
+        .about-box p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
         }
 
-        .value-badge {
-            background-color: #E8F5E9;
-            color: var(--dark-green);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: 700;
+        /* الإنجازات */
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievements-list li {
+            background: var(--white);
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            border: 1px solid #C8E6C9;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
-        .achievements-section {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 4rem 2rem;
-            margin: 2rem 0;
+        .achievements-list i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
         }
 
-        .achievements-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-
-        .achievement-item i {
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-            margin-bottom: 10px;
-        }
-
-        .achievement-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
+        /* نموذج الانضمام */
         .join-section {
-            background: var(--white);
-            padding: 3rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 50px 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            max-width: 700px;
+            margin-top: 50px;
+        }
+
+        .join-container {
+            max-width: 600px;
             margin: 0 auto;
         }
 
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #DDD;
             border-radius: 6px;
-            font-size: 0.95rem;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--primary-green);
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: var(--primary-green);
-            color: var(--white);
-            border: none;
-            padding: 14px;
-            border-radius: 6px;
+            border: 1px solid #ccc;
             font-size: 1rem;
-            font-weight: 700;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s;
         }
 
-        .btn-submit:hover {
-            background-color: var(--dark-green);
+        .form-submit-btn:hover {
+            background-color: #f9a825;
         }
 
+        /* الفوتر */
         footer {
-            background-color: var(--dark-green);
+            background-color: var(--dark-color);
             color: var(--white);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 4px solid var(--gold-accent);
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9rem;
         }
 
+        /* تجاوب مع الشاشات الصغيرة */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 gap: 15px;
             }
-            nav ul {
-                gap: 12px;
-                font-size: 0.9rem;
-            }
             .hero h2 {
                 font-size: 1.8rem;
-            }
-            .container {
-                padding: 2rem 1rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- الترويسة والهيدر -->
     <header>
         <div class="header-container">
-            <div class="brand-logo">
-                <i class="fa-solid font-awesome fa-flag flag-icon" title="علم المملكة العربية السعودية"></i>
-                <div class="brand-title">
-                    <h1>كشافة ثانوية الأمير عبد المجيد بن عبد العزيز</h1>
-                    <p>الفرقة الكشفية للبنين - الرياض</p>
+            <div class="branding">
+                <!-- علم المملكة العربية السعودية -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="علم المملكة العربية السعودية" class="flag-img">
+                <!-- شعار الكشافة -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/World_Scout_Emblem_HSV.svg" alt="شعار الكشافة العالمي" class="scout-logo">
+                <div class="title-area">
+                    <h1>فرقة كشافة ثانوية الأمير عبد المجيد بن عبد العزيز (بنين)</h1>
+                    <p>بناء القادة والمواطنين</p>
                 </div>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#about">عن الكشافة</a></li>
+                    <li><a href="#about">ما هي الكشافة؟</a></li>
                     <li><a href="#values">القيم</a></li>
                     <li><a href="#benefits">الفوائد</a></li>
-                    <li><a href="#programs">البرامج</a></li>
+                    <li><a href="#programs">الأنشطة</a></li>
                     <li><a href="#join">انضم إلينا</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- قسم الواجهة الرئيسي -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="scout-emblem-wrapper">
-                <i class="fa-solid fa-compass" title="شعار الكشافة"></i>
-                <i class="fa-solid fa-campground" title="التخييم والقيادة"></i>
-            </div>
-            <h2>الكشافة: بناء القادة والمواطنين</h2>
-            <p>مرحباً بكم في الموقع الرسمي للفرقة الكشفية بـ ثانوية الأمير عبد المجيد. نهدف إلى بناء الإنسان المتكامل وتنمية المهارات القيادية والحياتية لدى الطلاب.</p>
-            <a href="#join" class="btn-cta">انضم للفرقة الكشفية الآن</a>
-        </div>
+        <h2>الكشافة: بناء القادة والمواطنين</h2>
+        <p>مرحباً بكم في الموقع الرسمي للفرقة الكشفية بثانوية الأمير عبد المجيد بن عبد العزيز للبنين. نهدف لبناء الإنسان المتكامل وتطوير المهارات القيادية والحياتية لدى الطلاب.</p>
+        <a href="#join" class="btn">انضم إلى الفرقة الآن</a>
     </section>
 
-    <section class="container" id="about">
-        <div class="section-title">
-            <h3>ما هي الكشافة؟</h3>
-        </div>
-        <div class="grid-cards">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                <h4>حركة عالمية تربوية</h4>
-                <p>حركة تطوعية غير سياسية مفتوحة للجميع، تأسست عام 1907 في بريطانيا وامتدت لتشمل أكثر من 170 دولة حول العالم.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
-                <h4>التعلم بالممارسة</h4>
-                <p>تعتمد على برامج تعليمية عملية والعمل الجماعي وتحدي الذات بدلاً من الاعتماد على الدراسة النظرية الجافة.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
-                <h4>تنمية الشخصية والمهارات</h4>
-                <p>تهدف لبناء الإنسان المتكامل وترسيخ مهارات حياتية واجتماعية وميدانية تدوم مع الطالب مدى العمر.</p>
-            </div>
-        </div>
-    </section>
+    <div class="container">
 
-    <section style="background-color: #EFEFEF; padding: 3rem 1rem;" id="values">
-        <div class="container" style="padding: 0;">
-            <div class="section-title">
-                <h3>القيم الأساسية للكشافة</h3>
-            </div>
-            <div class="values-flex">
-                <div class="value-badge"><i class="fa-solid fa-shield-halved"></i> الشرف والأمانة</div>
-                <div class="value-badge"><i class="fa-solid fa-hand-holding-heart"></i> الخدمة والمساعدة</div>
-                <div class="value-badge"><i class="fa-solid fa-user-group"></i> الصداقة والأخوة</div>
-                <div class="value-badge"><i class="fa-solid fa-award"></i> الثقة بالنفس</div>
-                <div class="value-badge"><i class="fa-solid fa-scale-balanced"></i> المسؤولية والانضباط</div>
-            </div>
-        </div>
-    </section>
+        <!-- ما هي الكشافة -->
+        <section id="about" class="about-box">
+            <h2 class="section-title">ما هي الكشافة؟</h2>
+            <p><i class="fa-solid fa-compass" style="color: var(--primary-color);"></i> <strong>حركة عالمية تربوية تطوعية:</strong> تأسست عام 1907 في بريطانيا وامتدت إلى أكثر من 170 دولة حول العالم.</p>
+            <p><i class="fa-solid fa-hands-holding-child" style="color: var(--primary-color);"></i> <strong>التعلم بالممارسة:</strong> تعتمد على برامج تعليمية عملية والعمل الجماعي بدلاً من الدراسة النظرية.</p>
+            <p><i class="fa-solid fa-seedling" style="color: var(--primary-color);"></i> <strong>تنمية الشخصية والمهارات:</strong> تهدف لبناء الإنسان المتكامل بمهارات حياتية تدوم مدى العمر.</p>
+        </section>
 
-    <section class="container" id="benefits">
-        <div class="section-title">
-            <h3>فوائد الانضمام للكشافة</h3>
-        </div>
-        <div class="grid-cards">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
-                <h4>تطوير مهارات القيادة</h4>
-                <p>تعلم كيفية قيادة فريق العمل، إدارة الأزمات، واتخاذ القرارات الصحيحة في المواقف الحاشدة والمختلفة.</p>
+        <!-- القيم الأساسية -->
+        <section id="values">
+            <h2 class="section-title">القيم الأساسية للكشافة</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>الشرف والأمانة</h3>
+                    <p>الالتزام بالقيم الأخلاقية العالية والصدق في كل تصرفاتنا.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h3>الخدمة</h3>
+                    <p>خدمة المجتمع والآخرين بإخلاص دون انتظار مقابل.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-user-group"></i>
+                    <h3>الصداقة</h3>
+                    <p>بناء علاقات قوية مع الأقران والعمل معهم بروح الفريق الواحد.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>المسؤولية والثقة</h3>
+                    <p>تحمل مسؤولية أفعالنا والالتزام بواجباتنا، واكتساب الشجاعة والاستقلالية من خلال التحديات.</p>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wrench"></i></div>
-                <h4>مهارات عملية ميدانية</h4>
-                <p>إتقان مهارات الطهي الخارجي، الإسعافات الأولية، العقد والربطات الكشفية، التخييم، والملاحة بالبوصلة.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-people-carry-box"></i></div>
-                <h4>روح الفريق والعمل الجماعي</h4>
-                <p>تعزيز التعاون مع الأقران والتسامح والاحترام المتبادل لتحقيق أهداف سامية مشتركة.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
-                <h4>المسؤولية الاجتماعية</h4>
-                <p>تنمية الشعور بالمسؤولية الوطنية والمجتمعية تجاه البيئة والمجتمع المحلي من خلال المشاريع التطوعية.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="achievements-section">
-        <div class="achievements-grid">
-            <div class="achievement-item">
-                <i class="fa-solid fa-user-graduate"></i>
-                <h4>تخريج القادة</h4>
-                <p>بناء مواطنين مسؤولين يساهمون بكفاءة في بناء الوطن.</p>
-            </div>
-            <div class="achievement-item">
-                <i class="fa-solid fa-handshake-angle"></i>
-                <h4>المشاريع الخدمية</h4>
-                <p>مبادرات تطوعية وبيئية أثرت إيجابياً في المجتمع.</p>
-            </div>
-            <div class="achievement-item">
-                <i class="fa-solid fa-trophy"></i>
-                <h4>المسابقات والجوائز</h4>
-                <p>تمثيل متميز للمدرسة في المنافسات الكشفية الإقليمية.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="container" id="programs">
-        <div class="section-title">
-            <h3>أنشطتنا وبرامجنا</h3>
-        </div>
-        <div class="grid-cards">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-mountain-sun"></i></div>
-                <h4>المخيمات والرحلات</h4>
-                <p>تدريب عملي مكثف على المهارات الكشفية، رحلات الاستكشاف، والبقاء في الطبيعة خلال رحلات الملاحة والتوجيه.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
-                <h4>المشاريع الخدمية والبيئية</h4>
-                <p>تنظيف البيئة وحمايتها، تنمية المجتمع، والعمل التطوعي المستمر لخدمة المبادرات الوطنية.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-kit-medical"></i></div>
-                <h4>الدورات التدريبية</h4>
-                <p>وروش عمل متخصصة في الإسعافات الأولية، السلامة المهنية، والمهارات الحياتية والتقنية.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- نموذج التسجيل وإرسال الإيميل -->
-    <section class="container" id="join">
-        <div class="join-section">
-            <div class="section-title" style="margin-bottom: 1.5rem;">
-                <h3>انضم إلينا اليوم</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">كن جزءاً من رحلة التغيير في ثانوية الأمير عبد المجيد</p>
-            </div>
+        <!-- الفوائد الكشفية -->
+        <section id="benefits" style="margin-top: 50px;">
+            <h2 class="section-title">فوائد الانضمام للكشافة</h2>
             
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <!-- المفتاح الذي يوجه الرسائل لإيميلك مباشرة -->
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                <input type="hidden" name="subject" value="طلب انضمام جديد للكشافة">
-                <input type="hidden" name="to_email" value="riyadagha2@gmail.com">
+            <h3 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fa-solid fa-user-check"></i> الفوائد الشخصية</h3>
+            <div class="grid" style="margin-bottom: 30px;">
+                <div class="card">
+                    <i class="fa-solid fa-chess-king"></i>
+                    <h3>تطوير مهارات القيادة</h3>
+                    <p>تعلم كيفية قيادة الفريق واتخاذ القرارات الصحيحة في المواقف المختلفة.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-campground"></i>
+                    <h3>مهارات عملية</h3>
+                    <p>تعلم الطهي الإسعافات الأولية، التخييم، والملاحة في البيئات المختلفة.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>الانضباط والتنظيم</h3>
+                    <p>تطوير القدرة على إدارة الوقت والموارد بكفاءة عالية واكتساب مهارات الإنجاز.</p>
+                </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="studentName">اسم الطالب الثلاثي:</label>
-                    <input type="text" id="studentName" name="اسم_الطالب" placeholder="أدخل اسمك الكامل" required>
+            <h3 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fa-solid fa-users"></i> الفوائد الاجتماعية</h3>
+            <div class="grid">
+                <div class="card">
+                    <i class="fa-solid fa-people-carry-box"></i>
+                    <h3>روح الفريق</h3>
+                    <p>تعزيز التعاون والعمل الجماعي لتحقيق أهداف مشتركة.</p>
                 </div>
-                <div class="form-group">
-                    <label for="gradeLevel">الصف الدراسي:</label>
-                    <select id="gradeLevel" name="الصف_الدراسي" required>
-                        <option value="">اختر الصف...</option>
-                        <option value="الأول ثانوي">الأول ثانوي</option>
-                        <option value="الثاني ثانوي">الثاني ثانوي</option>
-                        <option value="الثالث ثانوي">الثالث ثانوي</option>
-                    </select>
+                <div class="card">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h3>المسؤولية الاجتماعية</h3>
+                    <p>تنمية الشعور بالمسؤولية تجاه المجتمع والبيئة المحيطة.</p>
                 </div>
-                <div class="form-group">
-                    <label for="phone">رقم التواصل (الواتساب):</label>
-                    <input type="tel" id="phone" name="رقم_التواصل" placeholder="05xxxxxxxx" required>
+                <div class="card">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>الاحترام والتسامح</h3>
+                    <p>تعلم احترام الآخرين وتقبل الاختلافات بين الخلفيات والثقافات المتنوعة.</p>
                 </div>
-                <button type="submit" class="btn-submit">إرسال طلب الانضمام</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
 
+        <!-- الأنشطة والبرامج -->
+        <section id="programs" style="margin-top: 50px;">
+            <h2 class="section-title">أنشطتنا وبرامجنا</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fa-solid fa-tent"></i>
+                    <h3>المخيمات الصيفية</h3>
+                    <p>تدريب عملي مكثف على المهارات الكشفية والبقاء في الطبيعة.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3>الرحلات الاستكشافية</h3>
+                    <p>استكشاف المناطق الطبيعية وتعلم مهارات الملاحة والتوجيه.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-hands-helping"></i>
+                    <h3>المشاريع الخدمية</h3>
+                    <p>تنظيف البيئة والعمل التطوعي لخدمة المجتمع المحلي.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-kit-medical"></i>
+                    <h3>الدورات التدريبية</h3>
+                    <p>تدريب متخصص في الإسعافات الأولية والسلامة والمهارات الحياتية.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الإنجازات -->
+        <section style="margin-top: 50px;">
+            <h2 class="section-title">إنجازاتنا وإسهاماتنا</h2>
+            <ul class="achievements-list">
+                <li><i class="fa-solid fa-trophy"></i> <strong>تخريج القادة:</strong> تخريج قادة ومواطنين مسؤولين يساهمون بفاعلية في بناء المجتمع.</li>
+                <li><i class="fa-solid fa-hands-praying"></i> <strong>المشاريع الخدمية:</strong> تنفيذ مشاريع خدمية متعددة أثرت إيجاباً على المجتمع المحلي.</li>
+                <li><i class="fa-solid fa-medal"></i> <strong>المسابقات والجوائز:</strong> تمثيل ثانوية الأمير عبد المجيد بكفاءة وحصد مراكز في المسابقات الكشفية الإقليمية والوطنية.</li>
+                <li><i class="fa-solid fa-chart-line"></i> <strong>التأثير الاجتماعي:</strong> إحداث فرق حقيقي وملموس في حياة الطلاب والمجتمع عبر البرامج المستمرة.</li>
+            </ul>
+        </section>
+
+        <!-- نموذج الانضمام لارسال البيانات الى البريد الإلكتروني -->
+        <section id="join" class="join-section">
+            <div class="join-container">
+                <h2 style="text-align: center; margin-bottom: 10px; color: var(--accent-color);">انضم إلينا اليوم</h2>
+                <p style="text-align: center; margin-bottom: 30px;">كن جزءاً من رحلة التغيير وطوّر مهاراتك القيادية مع كشافة ثانوية الأمير عبد المجيد بن عبد العزيز</p>
+                
+                <!-- تم ربط الفورم بإيميلك عن طريق Formspree -->
+                <form action="https://formspree.io/f/riyadagha2@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">اسم الطالب الثلاثي:</label>
+                        <input type="text" id="fullname" name="اسم الطالب" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade">الصف الدراسي:</label>
+                        <select id="grade" name="الصف الدراسي" required>
+                            <option value="">اختر الصف</option>
+                            <option value="الأول ثانوي">الأول ثانوي</option>
+                            <option value="الثاني ثانوي">الثاني ثانوي</option>
+                            <option value="الثالث ثانوي">الثالث ثانوي</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال / الواتساب:</label>
+                        <input type="tel" id="phone" name="رقم الجوال" placeholder="05xxxxxxxx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">لماذا ترغب بالانضمام للكشافة؟ (اختياري):</label>
+                        <textarea id="notes" name="سبب الانضمام" rows="3" placeholder="اكتب نبذة مختصرة عن اهتماماتك..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">إرسال طلب الانضمام</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- الفوتر -->
     <footer>
-        <p>&copy; 2026 الفرقة الكشفية بـ ثانوية الأمير عبد المجيد بن عبد العزيز. جميع الحقوق محفوظة.</p>
-        <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">إعداد وتطوير الكشافة للبنين - المملكة العربية السعودية</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 - الفرقة الكشفية بثانوية الأمير عبد المجيد بن عبد العزيز (بنين)</p>
     </footer>
 
 </body>
