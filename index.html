@@ -10,8 +10,8 @@
     
     <style>
         :root {
-            --primary-green: #006C35; /* أخضر العلم السعودي */
-            --gold-accent: #D4AF37;   /* ذهبي الشعار الكشفي */
+            --primary-green: #006C35;
+            --gold-accent: #D4AF37;
             --dark-green: #004D25;
             --light-bg: #F8F9FA;
             --text-dark: #2B2B2B;
@@ -32,7 +32,6 @@
             line-height: 1.7;
         }
 
-        /* Header & Navigation */
         header {
             background-color: var(--primary-green);
             color: var(--white);
@@ -89,7 +88,6 @@
             color: var(--gold-accent);
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 77, 37, 0.88), rgba(0, 108, 53, 0.85)), 
                         url('https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?auto=format&fit=crop&w=1350&q=80') center/cover;
@@ -141,7 +139,6 @@
             background-color: #E5BE3E;
         }
 
-        /* Layout Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -172,7 +169,6 @@
             background-color: var(--gold-accent);
         }
 
-        /* Grid Layouts */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -209,7 +205,6 @@
             font-size: 0.95rem;
         }
 
-        /* Values Section */
         .values-flex {
             display: flex;
             flex-wrap: wrap;
@@ -230,7 +225,6 @@
             border: 1px solid #C8E6C9;
         }
 
-        /* Achievements / Numbers Section */
         .achievements-section {
             background-color: var(--primary-green);
             color: var(--white);
@@ -258,7 +252,6 @@
             margin-bottom: 5px;
         }
 
-        /* Join Form Section */
         .join-section {
             background: var(--white);
             padding: 3rem;
@@ -308,7 +301,6 @@
             background-color: var(--dark-green);
         }
 
-        /* Footer */
         footer {
             background-color: var(--dark-green);
             color: var(--white);
@@ -318,7 +310,6 @@
             border-top: 4px solid var(--gold-accent);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -339,7 +330,6 @@
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header>
         <div class="header-container">
             <div class="brand-logo">
@@ -361,7 +351,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="scout-emblem-wrapper">
@@ -374,7 +363,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="container" id="about">
         <div class="section-title">
             <h3>ما هي الكشافة؟</h3>
@@ -398,7 +386,6 @@
         </div>
     </section>
 
-    <!-- Values Section -->
     <section style="background-color: #EFEFEF; padding: 3rem 1rem;" id="values">
         <div class="container" style="padding: 0;">
             <div class="section-title">
@@ -414,7 +401,6 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
     <section class="container" id="benefits">
         <div class="section-title">
             <h3>فوائد الانضمام للكشافة</h3>
@@ -443,7 +429,6 @@
         </div>
     </section>
 
-    <!-- Achievements Banner -->
     <section class="achievements-section">
         <div class="achievements-grid">
             <div class="achievement-item">
@@ -464,7 +449,6 @@
         </div>
     </section>
 
-    <!-- Programs Section -->
     <section class="container" id="programs">
         <div class="section-title">
             <h3>أنشطتنا وبرامجنا</h3>
@@ -488,7 +472,7 @@
         </div>
     </section>
 
-    <!-- Join Us Section (مربوط بالبريد الإلكتروني) -->
+    <!-- نموذج التسجيل وإرسال الإيميل -->
     <section class="container" id="join">
         <div class="join-section">
             <div class="section-title" style="margin-bottom: 1.5rem;">
@@ -496,8 +480,12 @@
                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">كن جزءاً من رحلة التغيير في ثانوية الأمير عبد المجيد</p>
             </div>
             
-            <!-- تم توجيه النموذج إلى البريد المخصص -->
-            <form action="https://formspree.io/f/riyadagha2@gmail.com" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- المفتاح الذي يوجه الرسائل لإيميلك مباشرة -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="طلب انضمام جديد للكشافة">
+                <input type="hidden" name="to_email" value="riyadagha2@gmail.com">
+
                 <div class="form-group">
                     <label for="studentName">اسم الطالب الثلاثي:</label>
                     <input type="text" id="studentName" name="اسم_الطالب" placeholder="أدخل اسمك الكامل" required>
@@ -520,7 +508,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 الفرقة الكشفية بـ ثانوية الأمير عبد المجيد بن عبد العزيز. جميع الحقوق محفوظة.</p>
         <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">إعداد وتطوير الكشافة للبنين - المملكة العربية السعودية</p>
